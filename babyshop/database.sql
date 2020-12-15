@@ -45,7 +45,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id_acc`, `name`, `email`, `password`, `phone`, `address`, `image`, `date_create`, `level`) VALUES
-(1, 'Administator', 'admin@gmail.com', '123456', '09090909099', '', '1563853960.png', '2020-07-10 08:09:12', 1),
+(1, 'Administator', 'admin@gmail.com', '123456', '09090909099', '', '1563853960.png', '2020-07-10 08:09:12', 1);
+
 
 
 -- --------------------------------------------------------
@@ -640,9 +641,9 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id_slider`, `image`, `link`, `date_create`) VALUES
-(4, '1563284086.jpg', 'trang-chu.html', '2019-07-16 20:16:06'),
-(5, '1563284095.jpg', 'trang-chu.html', '2019-07-16 20:29:37'),
-(6, '1563284230.jpg', 'trang-chu.html', '2019-07-16 20:37:10');
+(4, '113.jpg', 'trang-chu.html', '2019-07-16 20:16:06'),
+(5, '113.jpg', 'trang-chu.html', '2019-07-16 20:29:37'),
+(6, '113.jpg', 'trang-chu.html', '2019-07-16 20:37:10');
 
 -- --------------------------------------------------------
 
