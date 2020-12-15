@@ -19,10 +19,10 @@
 
 		if($name && $phone && $address && $email && $password && $repassword)
 		{
-			//$pass_md5 = ($password);
-			//$repass_md5 =($repassword);
+			$pass = ($password);
+			$repass = ($repassword);
 
-			if($password != $repassword)
+			if($pass != $repass)
 			{
 				echo "<script>alert('Mật khẩu không trùng nhau!.');</script>";
 			}
@@ -38,7 +38,7 @@
 				else
 				{
 					// insert account
-					$ins = "INSERT INTO account(name, email, password, phone, address, image, date_create, level) VALUES('".$name."', '".$email."', '".$password."', '".$phone."', '".$address."', '".$image."', '".$date_create."', '".$level."')";
+					$ins = "INSERT INTO account(name, email, password, phone, address, image, date_create, level) VALUES('".$name."', '".$email."', '".$pass."', '".$phone."', '".$address."', '".$image."', '".$date_create."', '".$level."')";
 					mysqli_query($conn, $ins);
 
 					$_SESSION['customer'] = $email;

@@ -16,13 +16,13 @@
         if(isset($_POST['dangnhap']))
         {
             $email = $_POST['email'];
-            $password = $_POST['password'];
+            $password = ($_POST['password']);
 
             if($email)
             {
                 
-                //if($password != "d41d8cd98f00b204e9800998ecf8427e") // check space
-                //{
+                if($password != "d41d8cd98f00b204e9800998ecf8427e") // check space
+                {
                 
                     $sql = "SELECT email, level FROM account WHERE email = '$email' AND password = '$password'";
                     $result = mysqli_query($conn, $sql);
@@ -39,11 +39,11 @@
                     {
                         echo "<script>alert('Tài khoản không tồn tại!.');</script>";
                     }
-                //}
-                //else
-                //{
+                }
+                else
+                {
                    echo "<script>alert('Vui lòng nhập mật khẩul!.');</script>";    
-                //}
+                }
             }
             else
             {
@@ -60,7 +60,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Quản trị Website Thư Viện</title>
+    <title>Quản trị - Website bán hàng</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.min.css">
     <link href="../assets/vendor/fonts/circular-std/style.css" rel="stylesheet">

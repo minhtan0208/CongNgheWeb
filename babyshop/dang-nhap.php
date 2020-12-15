@@ -12,10 +12,10 @@
 
 		if($email && $password)
 		{
-			$pass_md5 = ($password);
+			$pass = ($password);
 
 			// check
-			$sql = "SELECT email, level FROM account WHERE email = '$email'  AND level = 2";
+			$sql = "SELECT email, level FROM account WHERE email = '$email' AND password = '$pass' AND level = 2";
 			$result = mysqli_query($conn, $sql);
 			$row = mysqli_fetch_array($result);
 			$level = $row['level'];
