@@ -19,7 +19,7 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<base href="http://localhost/babyshop/">
+	<base href="http://localhost/CongNgheWeb/babyshop/">
 	<!-- neu co ten mien khac thi thay doi base -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>LIBRARY | WEBSITE THU VIEN</title>

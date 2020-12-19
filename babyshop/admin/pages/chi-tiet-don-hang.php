@@ -25,7 +25,7 @@
         if(isset($_GET['code_invoice']))
         {
             $code_invoice = $_GET['code_invoice'];
-            $invoice = "SELECT code_invoice, info_receive, info_product, name, phone FROM invoice inv, account a WHERE inv.id_customer = a.id_acc AND code_invoice = '$code_invoice'";
+            $invoice = "SELECT code_invoice, info_receive, info_product, name, phone, address FROM invoice inv, account a WHERE inv.id_customer = a.id_acc AND code_invoice = '$code_invoice'";
             $rs_invoice = mysqli_query($conn, $invoice);
             $row_invoice = mysqli_fetch_array($rs_invoice);
         }
@@ -90,7 +90,7 @@
                                 </h5>
                                 <div class="card-body" style="text-align: justify;">
                                     <h4 style="font-family: 'Roboto Condensed', sans-serif;">Tên khách hàng: <b> <?php echo $row_invoice['name']; ?> </b></h4>
-                                    <h5 style="font-family: 'Roboto Condensed', sans-serif; margin-top: -15px;">Địa chỉ: <b>354/29 Phan Văn Trị , Phường 11 , Quận Bình Thạnh</b></h5>
+                                    <h5 style="font-family: 'Roboto Condensed', sans-serif; margin-top: -15px;">Địa chỉ: <b><?php echo $row_invoice['address']; ?></b></h5>
                                     <h5 style="font-family: 'Roboto Condensed', sans-serif; margin-top: -15px;">Số điện thoại: <b><?php echo $row_invoice['phone']; ?>(Mặc định)</b></h5>
                                     <h5 style="font-family: 'Roboto Condensed', sans-serif; margin-top: -15px;">Thông tin nhận hàng mới: <b><?php echo $row_invoice['info_receive']; ?></b></h5>
                                     <h5 style="font-family: 'Roboto Condensed', sans-serif; margin-top: -15px;">Thông tin sản phẩm: <b><?php echo $row_invoice['info_product']; ?></b></h5>
