@@ -1,0 +1,14 @@
+
+RewriteEngine On
+
+RewriteRule "trang-chu.html" "index.php"
+RewriteRule "dang-nhap.html" "dang-nhap.php"
+RewriteRule "dang-ky.html" "dang-ky.php"
+RewriteRule "gio-hang.html" "gio-hang.php"
+RewriteRule "thanh-toan.html" "thanh-toan.php"
+RewriteRule "gioi-thieu.html" "blog/Gioi-thieu/Gioi-thieu-29.html"
+RewriteRule "lien-he.html" "blog/Lien-he/Lien-he-30.html"
+RewriteRule "^san-pham/(.*)(.*)-(.*).html$" "chi-tiet-san-pham.php?type=$1&slug=$2&id=$3"
+RewriteRule "^blog/(.*)(.*)-(.*).html$" "chi-tiet-blog.php?type=$1&slug=$2&id=$3"
+RewriteRule "^loai-blog/(.*)-(.*)-(.*).html$" "blog.php?type=$1&id=$2&page=$3"
+RewriteRule "^loai-san-pham/(.*)-(.*)-(.*).html$" "san-pham.php?type=$1&id=$2&page=$3"
