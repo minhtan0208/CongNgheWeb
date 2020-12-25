@@ -22,22 +22,14 @@
         $name_user = $row_session['name'];
         $id_acc = $row_session['id_acc'];
 
-        // get last record product to set SKU
-        $last = "SELECT sku_product FROM product ORDER BY sku_product DESC";
-        $rs_last = mysqli_query($conn, $last);
-        $row_last = mysqli_fetch_array($rs_last);
-        $sku_last = $row_last['sku_product'];
-        $cut_num = substr($sku_last, 1);
-        $number_last = (int)$cut_num;
-        $number_inc = $number_last + 1;
-
-        if($number_inc < 10)
+        // get data
+        if(isset($_GET['id']))
         {
-            $sku_product = "S0" . $number_inc;
-        }
-        else
-        {
-            $sku_product = "S" . $number_inc;
+            $id = $_GET['id'];
+            $data = "SELECT image, sku_product, name_product, highlight, qty, price, summary FROM product WHERE sku_product = '$id'";
+            $rs_data = mysqli_query($conn, $data);
+            $row_data = mysqli_fetch_array($rs_data);
+            $old_image = $row_data['image'];
         }
 
         // upload blog
@@ -47,15 +39,11 @@
             $name_product = $_POST['name_product'];
             $slug = generateURL($name_product);
             $summary = $_POST['summary'];
-            $content = $_POST['content'];
-            $date_upload = date("Y-m-d H:i:s");
-            $author = $id_acc;
+            
             $qty = $_POST['qty'];
             $price = $_POST['price'];
             $highlight = $_POST['highlight'];
-            $view = 0;
             $id_type = $_POST['id_type'];
-            $flag = 0;
 
 
             // setup image thumbnail
@@ -76,24 +64,41 @@
                     else
                     {
                         // insert to history
-                        $text = " đã đăng  <b>". $name_product . "</b>";
+                        $text = " đã chỉnh sửa sản phẩm <b>". $name_product . "</b>";
                         $time = date('Y-m-d H:i:s');
                         $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
                         mysqli_query($conn, $ins_his);
+
+                        // remove old file
+                        $remove_image = $target_dir . $old_image;
+                        if($old_image != "no-image.png")
+                        {
+                            unlink($remove_image);
+                        }
 
                         // upload file to host
                         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
                         // add new record
-                        $ins = "INSERT INTO product(sku_product, image, name_product, slug, summary, date_upload, author, qty, price, highlight, view, id_type, flag) VALUES('".$sku_product."', '".$name_code."', '".$name_product."', '".$slug."', '".$summary."', '".$date_upload."', '".$author."', '".$qty."', '".$price."', '".$highlight."', '".$view."', '".$id_type."', '".$flag."')";
-                        mysqli_query($conn, $ins);
-                        echo "<script>alert('Upload  thành công');</script>";
+                        $update = "UPDATE product SET
+                                image = '".$name_code."',
+                                name_product = '".$name_product."',
+                                slug = '".$slug."',
+                                summary = '".$summary."',
+                              
+                                qty = '".$qty."',
+                                price = '".$price."',
+                                highlight = '".$highlight."',
+                                id_type = '".$id_type."'
+                                WHERE sku_product = '$id'";
+                        mysqli_query($conn, $update);
+                        echo "<script>alert('Lưu lại thành công');</script>";
                         echo "<script>location.href='san-pham.php';</script>";
                     }
                 }
                 else
                 {
-                    echo "<script>alert('Vui lòng nhập tên ');</script>";
+                    echo "<script>alert('Vui lòng nhập tên sản phẩm');</script>";
                 }
             }
             else
@@ -101,22 +106,29 @@
                 if($name_product)
                 {
                     // insert to history
-                    $text = " đã đăng  <b>". $name_product . "</b>";
+                    $text = " đã chỉnh sửa sản phẩm <b>". $name_product . "</b>";
                     $time = date('Y-m-d H:i:s');
                     $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
                     mysqli_query($conn, $ins_his);
-                            
-                    $name_code = "no-image.png";
 
                     // add new record
-                    $ins = "INSERT INTO product(sku_product, image, name_product, slug, summary, date_upload, author, qty, price, highlight, view, id_type, flag) VALUES('".$sku_product."', '".$name_code."', '".$name_product."', '".$slug."', '".$summary."', '".$date_upload."', '".$author."', '".$qty."', '".$price."', '".$highlight."', '".$view."', '".$id_type."', '".$flag."')";
-                        mysqli_query($conn, $ins);
-                    echo "<script>alert('Upload thành công');</script>";
+                    $update = "UPDATE product SET
+                            name_product = '".$name_product."',
+                            slug = '".$slug."',
+                            summary = '".$summary."',
+                            
+                            qty = '".$qty."',
+                            price = '".$price."',
+                            highlight = '".$highlight."',
+                            id_type = '".$id_type."'
+                            WHERE sku_product = '$id'";
+                    mysqli_query($conn, $update);
+                    echo "<script>alert('Lưu lại thành công');</script>";
                     echo "<script>location.href='san-pham.php';</script>";
                 }
                 else
                 {
-                    echo "<script>alert('Vui lòng nhập tên ');</script>";
+                    echo "<script>alert('Vui lòng nhập tên sản phẩm');</script>";
                 }
             }
         }
@@ -144,7 +156,7 @@
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
                                             <li class="breadcrumb-item"><a href="san-pham.php" class="breadcrumb-link">Sản phẩm</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Đăng tải sản phẩm</li>
+                                            <li class="breadcrumb-item active" aria-current="page">Đăng tải sách</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -164,11 +176,11 @@
                                             <form method="POST" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label>Mã sách (SKU):</label>
-                                                    <input class="form-control" type="text" name="sku_product" value="<?php echo $sku_product; ?> (Mã tự tạo)" disabled>
+                                                    <input class="form-control" type="text" name="sku_product" value="<?php echo $row_data['sku_product']; ?>" disabled>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Tên sách*:</label>
-                                                    <textarea class="form-control" name="name_product"></textarea>
+                                                    <textarea class="form-control" name="name_product"><?php echo $row_data['name_product']; ?></textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Chọn ảnh sách:</label>
@@ -177,46 +189,68 @@
                                                 <div class="form-group">
                                                     <label>Chọn loại sách:</label>
                                                     <select class="form-control" name="id_type">
-                                <?php 
+                                                    <?php 
 
-                                    // show type blog
-                                    $type_op = "SELECT id_type, typename FROM type_product";
-                                    $rs_type_op = mysqli_query($conn, $type_op);
-                                    while ($row_type_op = mysqli_fetch_array($rs_type_op))
-                                    {
-                                ?>
+                                                        // show type blog
+                                                        $type_ac = "SELECT tp.id_type as id_type, typename FROM type_product tp, product p WHERE p.id_type = tp.id_type AND sku_product = '$id'";
+                                                        $rs_type_ac = mysqli_query($conn, $type_ac);
+                                                        $row_type_ac = mysqli_fetch_array($rs_type_ac);
+                                                        $id_type_ac = $row_type_ac['id_type'];
+
+                                                    ?>
+                                                        <option value="<?php echo $row_type_ac['id_type']; ?>"><?php echo $row_type_ac['typename']; ?></option>
+
+                                                    <?php 
+
+                                                        // show type blog
+                                                        $type_op = "SELECT id_type, typename FROM type_product WHERE id_type <> $id_type_ac";
+                                                        $rs_type_op = mysqli_query($conn, $type_op);
+                                                        while ($row_type_op = mysqli_fetch_array($rs_type_op))
+                                                        {
+                                                    ?>
                                                         <option value="<?php echo $row_type_op['id_type']; ?>"><?php echo $row_type_op['typename']; ?></option>
-                                <?php 
-                                    }
-                                    // end while
-                                ?>
+                                                    <?php 
+                                                        }
+                                                        // end while
+                                                    ?>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Sản phẩm nổi bật:</label>
                                                     <select class="form-control" name="highlight">
+                                                    <?php 
+
+                                                        if($row_data['highlight'] == 1)
+                                                        {
+                                                    ?>
                                                         <option value="1">Có</option>
                                                         <option value="0">Không</option>
+                                                    <?php
+                                                        }
+                                                        else
+                                                        {
+                                                    ?>
+                                                        <option value="0">Không</option>
+                                                        <option value="1">Có</option>
+                                                    <?php
+                                                        }
+                                                    ?>    
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Số lượng nhập hàng:</label>
-                                                    <input class="form-control" type="text" name="qty"value="1">
+                                                    <input class="form-control" type="text" name="qty"value="<?php echo $row_data['qty']; ?>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Giá sản phẩm:</label>
-                                                    <input class="form-control" type="text" name="price" value="1000">
+                                                    <label>Giá sách:</label>
+                                                    <input class="form-control" type="text" name="price" value="<?php echo $row_data['price']; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Mô tả ngắn:</label>
-                                                    <textarea class="form-control" name="summary"><?php if(isset($summary)){ echo $summary; } ?></textarea>
+                                                    <textarea class="form-control" name="summary"><?php echo $row_data['summary']; ?></textarea>
                                                 </div>
                                                 
-                                                <div class="form-group">
-                                                    <label>Ngày đăng:</label>
-                                                    <input type="text" name="date_upload" class="form-control" value="<?php echo date('d-m-Y H:i:s'); ?>" disabled>
-                                                </div>
-                                                <button type='submit' class='btn btn-primary' name='upload'>Đăng lên</button>
+                                                <button type='submit' class='btn btn-warning' name='upload'>Lưu lại</button>
                                             </form>
                                         </div>
                                         <!-- col-lg-12 -->
