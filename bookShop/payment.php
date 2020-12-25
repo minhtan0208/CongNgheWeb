@@ -60,7 +60,7 @@
 			// remove cart
 			$delcart = "DELETE FROM cart WHERE id_customer = '$user_payment'";
 			mysqli_query($conn, $delcart);
-			echo "<script>alert('Mượn thành công');</script>";
+			echo "<script>alert('Đặt hàng thành công');</script>";
 			echo "<script>location.href='trang-chu.html';</script>";
 		}
 		// end check method

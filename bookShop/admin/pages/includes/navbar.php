@@ -26,55 +26,7 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
-                        <li class="nav-item">
-                            <div id="custom-search" class="top-search-bar">
-                                <input class="form-control" type="text" placeholder="Tìm kiếm..">
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown notification">
-                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-history"></i><!--<span class='indicator'></span>--></a>
-                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
-                                <li>
-                                    <div class="notification-title"> Lịch sử </div>
-                                    <div class="notification-list">
-                                        <div class="list-group">
-                                <?php 
-                                    // get data notification
-                                    $his = "SELECT text, time, image, name FROM history h, account a WHERE a.id_acc = h.id_acc ORDER BY time DESC LIMIT 10";
-                                    $rs_his = mysqli_query($conn, $his);
-                                    // set flag 
-                                    while ($row_his = mysqli_fetch_array($rs_his)) 
-                                    {
-
-                                    ?>
-                                            <a href="history.php" class="list-group-item list-group-item-action">
-                                                <div class="notification-info">
-                                                    <div class="notification-list-user-img"><img src="public/images/avatars/<?php echo $row_his['image']; ?>" alt="<?php echo $row_his['image']; ?>" class="user-avatar-md rounded-circle"></div>
-                                                    <div class="notification-list-user-block">
-                                                        <!--
-                                                        <span class="notification-list-user-name">Jeremy Rakestraw</span>-->
-                                                        <?php echo "<b>" . $row_his['name'] . "</b>" . $row_his['text']; ?>
-                                                        <div class="notification-date">
-                                                            <?php 
-                                                                $date = date_create($row_his['time']);
-                                                                echo date_format($date, "d-m-Y H:i:s");
-                                                            ?>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                    <?php
-                                    }
-                                    // end while
-                                ?>   
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="list-footer"> <a href="history.php">Xem tất cả</a></div>
-                                </li>
-                            </ul>
-                        </li>
+ 
                         <!--
                         <li class="nav-item dropdown connection">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
