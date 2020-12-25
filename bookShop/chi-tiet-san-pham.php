@@ -237,7 +237,9 @@
 
 		$product_rela = "SELECT sku_product, typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, content, price FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1  AND p.id_type = $id_type AND sku_product <> '$id'";
 		$rs_product_rela = mysqli_query($conn, $product_rela);
-		while($row_product_rela = mysqli_fetch_array($rs_product_rela))	{
+		for ($i = 0; $i < 2; $i++){
+			$row_product_rela = mysqli_fetch_array($rs_product_rela);
+		//while($row_product_rela = mysqli_fetch_array($rs_product_rela))	{
 	?>
 						    		<div class="product_item_small">
 						    			<div class="left_item">
