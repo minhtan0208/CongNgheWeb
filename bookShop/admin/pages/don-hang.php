@@ -43,7 +43,7 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang Chính</a></li>
+                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Đơn hàng</a></li>
                                             <li class="breadcrumb-item"><a href="don-hang.php" class="breadcrumb-link">Đang chờ duyệt</a></li>
                                         </ol>
                                     </nav>

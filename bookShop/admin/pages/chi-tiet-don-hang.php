@@ -121,10 +121,7 @@
                                     <a href="chi-tiet-don-hang.php?confirm=<?php echo $row_invoice['code_invoice']; ?>" class="btn btn-primary btn-block">
                                         Xác nhận đơn hàng
                                     </a>
-
-                                    <a href="cancel-invoice.php?cancel=<?php echo $row_invoice['code_invoice']; ?>&invoice" class="btn btn-danger btn-block" onclick="return confirm('Đơn hàng này sẽ được hủy vĩnh viễn. Đồng ý?')"
-                                    
-
+                                    <a href="chi-tiet-don-hang.php?cancel=<?php echo $row_invoice['code_invoice']; ?>" class="btn btn-danger btn-block" onclick="return confirm('Đơn hàng này sẽ được hủy. Đồng ý?')">
                                         Hủy đơn hàng
                                     </a>
                                 </div>

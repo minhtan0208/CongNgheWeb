@@ -211,10 +211,7 @@
                                                     <label>Mô tả ngắn:</label>
                                                     <textarea class="form-control" name="summary"><?php if(isset($summary)){ echo $summary; } ?></textarea>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Bài viết về sản phẩm:</label>
-                                                     <textarea class="form-control" id="ckeditor" name="content"><?php if(isset($content)){ echo $content; } ?></textarea>
-                                                </div>
+                                                
                                                 <div class="form-group">
                                                     <label>Ngày đăng:</label>
                                                     <input type="text" name="date_upload" class="form-control" value="<?php echo date('d-m-Y H:i:s'); ?>" disabled>

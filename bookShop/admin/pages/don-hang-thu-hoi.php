@@ -36,8 +36,8 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
-                                            <li class="breadcrumb-item"><a href="don-hang.php" class="breadcrumb-link">Đơn hàng</a></li>
+                                            
+                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Đơn hàng</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Quản lý đơn hàng</li>
                                         </ol>
                                     </nav>
@@ -86,14 +86,7 @@
                                     </div>
                                     <!-- row -->
                                 </div>
-                                <div class="card-footer">
-                                    <a href="delivery.php?code_invoice=<?php echo $row_invoice['code_invoice']; ?>&recalled" class="btn btn-success" title=" thành công">
-                                        <i class="fas fa-check"></i> thành công
-                                    </a>
-                                    <a href="cancel-invoice.php?cancel=<?php echo $row_invoice['code_invoice']; ?>&delivery" class="btn btn-danger" title="Hủy bỏ " onclick="return confirm('Đơn này sẽ được hủy vĩnh viễn. Đồng ý?')">
-                                        <i class="fas fa-times"></i> Xóa đơn hàng
-                                    </a>
-                                </div>
+                                
                             </div>
                         </div>
                         <!-- col-lg-12 -->

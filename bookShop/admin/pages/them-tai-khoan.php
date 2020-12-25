@@ -19,8 +19,8 @@
             $target_dir = "public/images/avatars/";
             $name = $_POST['name'];
             $email_reg = $_POST['email_reg'];
-            $password = md5($_POST['password']);
-            $repass = md5($_POST['repass']);
+            $password = $_POST['password'];
+            $repass = $_POST['repass'];
             $phone = $_POST['phone'];
             $address = $_POST['address'];
             $date_create = date("Y-m-d H:i:s");

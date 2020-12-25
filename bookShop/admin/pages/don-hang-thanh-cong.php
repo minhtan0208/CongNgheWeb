@@ -60,8 +60,8 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
-                                            <li class="breadcrumb-item"><a href="don-hang.php" class="breadcrumb-link">Đơn hàng</a></li>
+                                            
+                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Đơn hàng</a></li>
                                             <li class="breadcrumb-item active" aria-current="page">Đơn hàng đã giao</li>
                                         </ol>
                                     </nav>
@@ -82,7 +82,7 @@
                                         <table class="table">
                                             <thead class="bg-light">
                                                 <tr class="border-0">
-                                                    <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Mã sách</th>
+                                                    <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Mã đơn hàng</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Tên khách hàng</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Địa chỉ</th>
                                                     <th class="border-0" style="font-family: 'Roboto Condensed', sans-serif;">Số điện thoại</th>
