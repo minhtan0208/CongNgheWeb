@@ -45,7 +45,7 @@
             $reup_invoice = "UPDATE invoice SET flag = 1 WHERE code_invoice = '$code_invoice'";
             mysqli_query($conn, $reup_invoice);
 
-            echo "<script>alert('Xác nhận mượn sách thành công');</script>";
+            echo "<script>alert('Xác nhận đặt hàng thành công');</script>";
             echo "<script>location.href='don-hang.php';</script>";
         }
 
@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header" >
-                                <h2 class="pageheader-title" style="font-family: 'Roboto Condensed', sans-serif;">Quản trị Website Thư Viện</h2>
+                                <h2 class="pageheader-title" style="font-family: 'Roboto Condensed', sans-serif;">Quản trị Website Bán Sách</h2>
                                 <!--
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 -->
@@ -71,8 +71,8 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
-                                            <li class="breadcrumb-item"><a href="don-hang.php" class="breadcrumb-link">Mượn Sách</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Chi tiết mượn sách</li>
+                                            <li class="breadcrumb-item"><a href="don-hang.php" class="breadcrumb-link">Đơn hàng </a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Chi tiết sách</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -101,9 +101,9 @@
             ?>
                                 <div class="card-footer">
                                     <a href="chi-tiet-don-hang.php?confirm=<?php echo $row_invoice['code_invoice']; ?>" class="btn btn-primary btn-block">
-                                        Xác nhận giao hàng
+                                        Xác nhận đơn hàng
                                     </a>
-                                    <a href="cancel-invoice.php?cancel=<?php echo $row_invoice['code_invoice']; ?>&invoice" class="btn btn-danger btn-block" onclick="return confirm('Đơn mượn sách này sẽ được hủy vĩnh viễn. Đồng ý?')">
+                                    <a href="cancel-invoice.php?cancel=<?php echo $row_invoice['code_invoice']; ?>&invoice" class="btn btn-danger btn-block" onclick="return confirm('Đơn hàng này sẽ được hủy vĩnh viễn. Đồng ý?')">
                                         Hủy đơn hàng
                                     </a>
                                 </div>

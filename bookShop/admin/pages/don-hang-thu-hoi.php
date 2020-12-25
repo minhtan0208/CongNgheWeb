@@ -29,7 +29,7 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="page-header" >
-                                <h2 class="pageheader-title" style="font-family: 'Roboto Condensed', sans-serif;">Quản trị Website Thư Viện</h2>
+                                <h2 class="pageheader-title" style="font-family: 'Roboto Condensed', sans-serif;">Quản trị Website Bán Sách</h2>
                                 <!--
                                 <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                                 -->
@@ -37,8 +37,8 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang chính</a></li>
-                                            <li class="breadcrumb-item"><a href="don-hang.php" class="breadcrumb-link">Mượn sách</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Quản lý mượn sách</li>
+                                            <li class="breadcrumb-item"><a href="don-hang.php" class="breadcrumb-link">Đơn hàng</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Quản lý đơn hàng</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -91,7 +91,7 @@
                                         <i class="fas fa-check"></i> thành công
                                     </a>
                                     <a href="cancel-invoice.php?cancel=<?php echo $row_invoice['code_invoice']; ?>&delivery" class="btn btn-danger" title="Hủy bỏ " onclick="return confirm('Đơn này sẽ được hủy vĩnh viễn. Đồng ý?')">
-                                        <i class="fas fa-times"></i> Xóa sách mượn
+                                        <i class="fas fa-times"></i> Xóa đơn hàng
                                     </a>
                                 </div>
                             </div>
