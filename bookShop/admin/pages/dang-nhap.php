@@ -94,7 +94,7 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="index.html"><img class="logo-img" src="../../public/images/logo.png" alt="logo"></a><span class="splash-description">Đăng nhập tài khoản</span></div>
+            <div class="card-header text-center"><a href="index.html"><img class="logo-img" src="public/images/logo/logoShop.png" alt="logo" width = "300px"></a><span class="splash-description">Đăng nhập tài khoản</span></div>
             <div class="card-body">
                 <form method="POST">
                     <div class="form-group">
