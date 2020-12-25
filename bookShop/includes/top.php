@@ -1,15 +1,15 @@
 
 	<div id="wrapper">
 		<!-- croll top -->
-		<div class="scrolltop">
+		<!--<div class="scrolltop">
 			<span><i class="fas fa-arrow-up"></i></span>
-		</div>
+		</div>-->
 		<div id="header">
 			<div class="top_header">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-9 col-6 sm_hidden">
-							Library | Phone: 0777508501
+							Library | Phone: *********
 						</div>
 						<!-- col-10 -->
 						<div class="col-lg-3 col-12">

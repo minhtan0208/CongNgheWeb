@@ -104,68 +104,7 @@
 			<!-- middle content -->
 			
 						<!-- col-lg-12 -->
-						<div class="col-lg-12" style="background: #fff;">
-							<div class="owl-carousel owl-blog">
-	<?php 
-                                
-        $blog = "SELECT id_blog, b.image as image, title, date_upload, b.slug as slug, slug_type, typename, author, summary, name FROM blog b, type_blog tb, account a WHERE b.id_type = tb.id_type AND a.id_acc = b.author AND flag = 1 and highlight = 1 ORDER BY date_upload DESC LIMIT 6";
-        $rs_blog = mysqli_query($conn, $blog);
-        while ($row_blog = mysqli_fetch_array($rs_blog)) 
-        {
-    ?>
-								<div class="item">
-									<div class="blog_index">
-										<div class="image_blog">
-											<a href="blog/<?php echo $row_blog['slug_type'] ?>/<?php echo $row_blog['slug']; ?>-<?php echo $row_blog['id_blog']; ?>.html">
-												<img src="admin/pages/public/images/blogs/<?php echo $row_blog['image']; ?>" alt="<?php echo $row_blog['image']; ?>" title="<?php echo $row_blog['title']; ?>">
-											</a>
-										</div>
-										<!-- image blog -->
-										<div class="content_blog">
-											<div class="content_left">
-												<span class="top_content_blog">
-													<?php 
-														$day = date_create($row_blog['date_upload']);
-														echo date_format($day, "d");
-													?>
-												</span>
-												<span class="bot_content_blog">
-													<?php 
-														$month = date_create($row_blog['date_upload']);
-														echo "Tháng " . date_format($month, "m");
-													?>
-												</span>
-											</div>
-											<!-- content left -->
-											<div class="content_right">
-												<span class="time_post">Đăng bởi:amazing goobjob; <?php echo $row_blog['name']; ?></span>
-												<h3>
-													<a href="blog/<?php echo $row_blog['slug_type'] ?>/<?php echo $row_blog['slug']; ?>-<?php echo $row_blog['id_blog']; ?>.html" title="<?php echo $row_blog['title']; ?>">
-														<?php 
-															echo mb_substr($row_blog['title'], 0, 50, 'UTF-8')."..."; 
-														?>
-													</a>
-												</h3>
-											</div>
-											<!-- content right -->
-											<div class="summary_item_blog">
-												<p>
-													<?php 
-														echo mb_substr($row_blog['summary'], 0, 90, 'UTF-8')."..."; 
-													?>
-												</p>
-											</div>
-										</div>
-										<!-- content blog -->
-									</div>
-									<!-- blog index -->
-								</div>
-								<!-- item -->
-	<?php 
-		}
-		// end
-	?>
-							</div>
+						
 							<!-- col-lg-12 -->
 							<div class="col-lg-12">
 								
