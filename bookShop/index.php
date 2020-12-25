@@ -12,7 +12,7 @@
 						<div class="col-lg-12 padding-15">
 							<div class="title_module_main">
 								<h2>
-									<a href="san-pham.php?id=7" title="Sản phẩm mới">Sản phẩm nổi bật</a>
+									<a  title="Sản phẩm mới">Sản phẩm nổi bật</a>
 								</h2>
 							</div>
 							<div class="product_main">
@@ -55,7 +55,7 @@
 						<div class="col-lg-12 padding-30">
 							<div class="title_module_main">
 								<h2>
-									<a href="#" title="Sản phẩm mới">Hàng mới về</a>
+									<a title="Sản phẩm mới">Hàng mới về</a>
 								</h2>
 							</div>
 							<div class="product_main">
@@ -94,11 +94,7 @@
 							</div>
 						</div>
 						<!-- col-lg-12 -->
-						<div class="col-lg-12">
-							<div class="viewmore">
-								<a href="loai-san-pham/xemthem.html" title="Xem thêm sản phẩm">Xem thêm sản phẩm</a>
-							</div>
-						</div>
+						
 						<!-- col-lg-12 -->
 					</div>
 					<!-- row -->
