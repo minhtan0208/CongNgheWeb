@@ -48,6 +48,24 @@
             echo "<script>alert('Xác nhận mượn sách thành công');</script>";
             echo "<script>location.href='don-hang.php';</script>";
         }
+		
+		if(isset($_GET['cancel']))
+        {
+            $code_invoice = $_GET['cancel'];
+            
+            // insert to history
+            $text = " đã hủy đơn hàn <b>". $code_invoice . "</b>";
+            $time = date('Y-m-d H:i:s');
+            $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
+            mysqli_query($conn, $ins_his);
+
+            // change flag invoice to transport
+            $reup_invoice = "UPDATE invoice SET flag = 3 WHERE code_invoice = '$code_invoice'";
+            mysqli_query($conn, $reup_invoice);
+
+            echo "<script>alert('Thu hồi đơn hàng thành công');</script>";
+            echo "<script>location.href='don-hang.php';</script>";
+        }
 
 ?>
 <body>
@@ -103,7 +121,7 @@
                                     <a href="chi-tiet-don-hang.php?confirm=<?php echo $row_invoice['code_invoice']; ?>" class="btn btn-primary btn-block">
                                         Xác nhận giao hàng
                                     </a>
-                                    <a href="cancel-invoice.php?cancel=<?php echo $row_invoice['code_invoice']; ?>&invoice" class="btn btn-danger btn-block" onclick="return confirm('Đơn mượn sách này sẽ được hủy vĩnh viễn. Đồng ý?')">
+                                    <a href="chi-tiet-don-hang.php?cancel=<?php echo $row_invoice['code_invoice']; ?>" class="btn btn-danger btn-block" onclick="return confirm('Đơn mượn sách này sẽ được hủy vĩnh viễn. Đồng ý?')">
                                         Hủy đơn hàng
                                     </a>
                                 </div>
