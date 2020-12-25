@@ -59,7 +59,7 @@
                                 <div class="page-breadcrumb">
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Quản lí đơn hàng</a></li>
+                                            <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Trang Chính</a></li>
                                             <li class="breadcrumb-item"><a href="van-chuyen.php" class="breadcrumb-link">Đang giao</a></li>
                                             
                                         </ol>

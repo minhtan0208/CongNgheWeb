@@ -115,16 +115,18 @@
                                 
                             $typep = "SELECT * FROM type_product ORDER BY typename DESC";
                             $rs_typep = mysqli_query($conn, $typep);
+							
                             $count = 0;
                             while ($row_typep = mysqli_fetch_array($rs_typep)) 
                             {
                                 $count++;
                                 $id_type = $row_typep['id_type'];
+								
                         ?>
 												<li>
 													<a href="loai-san-pham/<?php echo $row_typep['slug_type']; ?>-<?php echo $row_typep['id_type']; ?>-1.html" title="<?php echo $row_typep['typename']; ?>"><?php echo $row_typep['typename']; ?>
 							<?php 
-								// count number product
+								// // hiển thị tổng số sách
 								$total_p = "SELECT count(sku_product) as tong_sp FROM product WHERE flag = 1 AND id_type = $id_type";
 								$rs_total_p = mysqli_query($conn, $total_p);
 								$row_total_p = mysqli_fetch_array($rs_total_p);
@@ -136,6 +138,7 @@
 													</a>
 												</li>
 						<?php 
+						
 							}
 							// end while
 						?>
