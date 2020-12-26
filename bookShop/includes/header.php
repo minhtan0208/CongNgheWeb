@@ -22,7 +22,7 @@
 	<base href="http://localhost/CongNgheWeb/bookShop/">
 	<!-- neu co ten mien khac thi thay doi base -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>LIBRARY | WEBSITE THU VIEN</title>
+	<title>BookShop | WEBSITE Ban Sach</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">

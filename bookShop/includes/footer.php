@@ -23,22 +23,16 @@
 						</div>
 						<!-- col-lg-4 -->
 						<div class="col-lg-2">
-							<h4 class="clicked">Về chúng tôi</h4>
+							<h4 class="clicked"></h4>
 							<ul class="toggle_menu">
-								<li><a href="#" title="Trang chủ">Trang chủ</a></li>
-								<li><a href="#" title="Giới thiệu">Giới thiệu</a></li>
-								<li><a href="#" title="Sản phẩm">Sản phẩm</a></li>
-								<li><a href="#" title="Liên hệ">Liên hệ</a></li>
+								
 							</ul>
 						</div>
 						<!-- col-lg-2 -->
 						<div class="col-lg-2">
-							<h4 class="clicked">Chính sách</h4>
+							<h4 class="clicked"></h4>
 							<ul class="toggle_menu">
-								<li><a href="#" title="Trang chủ">Trang chủ</a></li>
-								<li><a href="#" title="Giới thiệu">Giới thiệu</a></li>
-								<li><a href="#" title="Sản phẩm">Sản phẩm</a></li>
-								<li><a href="#" title="Liên hệ">Liên hệ</a></li>
+								
 							</ul>
 						</div>
 						<!-- col-lg-2 -->
@@ -48,7 +42,7 @@
 							<h4 class="clicked">Theo dõi ngay</h4>
 							<ul class="follow_option">
 								<li>
-									<a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+									<a href="https://www.facebook.com/profile.php?id=100013885740980" target="_blank"><i class="fab fa-facebook-f"></i></a>
 								</li>
 								<li>
 									<a href="https://mail.google.com/mail/u/0/?tab=wm#inbox" target="_blank"><i class="fab fa-google"></i></a>
@@ -79,7 +73,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12">
-							<h2 class="title_school">Tên Thư Viện</h2>
+							<h2 class="title_school">Nhom 4AM</h2>
 							<h4 class="title_name">Địa chỉ liên hệ: 280 An Dương Vương -  QUẬN 5 - TPHCM</h4>
 							<h4 class="title_name">Số điện thoại: 0777508501</h4>
 						</div>

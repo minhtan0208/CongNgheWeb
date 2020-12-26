@@ -41,7 +41,7 @@
 							<div class="cart_login">
 								<div class="title_cart">
 									<h3>CHƯA ĐĂNG NHẬP TÀI KHOẢN</h3>
-									<span>Vui lòng <a href="dang-nhap.html"> đăng nhập </a> để mượn sách</span>
+									<span>Vui lòng <a href="dang-nhap.html"> đăng nhập </a> để mua sách</span>
 								</div>
 							</div>
 							<!-- cart_login -->

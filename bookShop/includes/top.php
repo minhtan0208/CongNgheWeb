@@ -144,6 +144,7 @@
 						?>
 											</ul>
 										</li>
+										<li class="nav_item"><a href="gio-hang.html" title="Giỏ hàng">Giỏ hàng của bạn</a></li>
 										<li class="nav_item">
 											
 											<ul class="item_small">
@@ -205,6 +206,7 @@
 		?>
 							</ul>
 						</li>
+						
 						<li class="parent">
 							<a href="#" class="slide" onclick="return false;">Tin tức</a>  <i class="fa fa-angle-down"></i></i>
 							<ul class="level10 slideContent">
@@ -226,9 +228,8 @@
 		?>
 							</ul>
 						</li>
-						<li class="parent">
-							<a href="lien-he.html">Bình luận ý kiến</a>
-						</li>
+						
+						
 					</ul>
 				</div>
 				<div class="clearfix"></div>
