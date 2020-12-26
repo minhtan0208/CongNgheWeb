@@ -19,12 +19,6 @@
         $tong_san_pham = $row_product['tong_san_pham'];
 
         // product
-        $blog = "SELECT count(id_blog) as tong_blog FROM blog";
-        $rs_blog = mysqli_query($conn, $blog);
-        $row_blog = mysqli_fetch_array($rs_blog);
-        $tong_blog = $row_blog['tong_blog'];
-
-        // product
         $customer = "SELECT count(id_acc) as tong_customer FROM account WHERE level = 2";
         $rs_customer = mysqli_query($conn, $customer);
         $row_customer = mysqli_fetch_array($rs_customer);
