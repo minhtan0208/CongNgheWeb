@@ -180,7 +180,20 @@
                                     </div>
                                 </div>
                                 <!-- card-body -->
-                                
+                                <div class="card-footer">
+                                    <div class="row">
+                                        <div class="col-lg-3 float-right text-cente">
+                                            <h4 style="font-family: 'Roboto Condensed', sans-serif;">Tổng giá trị đơn hàng: <h2 style="font-family: 'Roboto Condensed', sans-serif;"><b><?php echo number_format($total_money); ?>vnđ</b></h2></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card -->
+                        </div>
+                        <!-- col-lg-12 -->
+                    </div>
+                </div>
+            </div>
 <?php 
         // footer
         include('includes/footer.php');

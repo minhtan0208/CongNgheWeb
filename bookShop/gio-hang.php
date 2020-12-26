@@ -243,10 +243,10 @@
 				</div>
 				<div class="btn_cart_mobile">
 					<a href="thanh-toan.html">
-						<button class="btn btn-primary button btn-proceed-checkout" title="Xác nhận đơn hàng"><span>Xác nhận mượn sách</span></button>
+						<button class="btn btn-primary button btn-proceed-checkout" title="Xác nhận đơn hàng"><span>Xác nhận mua sách</span></button>
 					</a>
 					<a href="trang-chu.html">
-						<button class="btn btn-white f-left" title="Tiếp tục mua hàng" type="submit"><span>Tiếp tục chọn sách</span></button>
+						<button class="btn btn-white f-left" title="Tiếp tục mua hàng" type="submit"><span>Tiếp tục mua hàng</span></button>
 					</a>
 				</div>
 			</div>
