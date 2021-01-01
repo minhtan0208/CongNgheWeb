@@ -136,10 +136,30 @@
                             // check session 
                             if($level == 1)
                             {
-                                $product = "SELECT sku_product, image, name_product, date_upload, summary, typename, flag FROM product p, type_product tp WHERE p.id_type = tp.id_type ORDER BY date_upload DESC";
+                                $product = "SELECT count(*) FROM product";
                                 $rs_product = mysqli_query($conn, $product);
                                 $count = 0;
-                                while ($row_product = mysqli_fetch_array($rs_product)) 
+								$rows = mysqli_fetch_array($rs_product);
+								$tongsodong = $rows[0];
+								$kichthuoctrang = 10;
+								$tongsotrang = 1;
+								$dongbatdau = 1;
+								$tranghientai = 1;
+								if($tongsodong % $kichthuoctrang == 0)
+									$tongsotrang = $tongsodong/$kichthuoctrang;
+								else
+									$tongsotrang = (int)($tongsodong/$kichthuoctrang) +1;
+								if((!isset($_GET['tranghientai'])) || ($_GET['tranghientai'] == '1' )){
+									$dongbatdau = 0;
+									$tranghientai = 1;
+								}
+								else{
+									$dongbatdau = ($_GET['tranghientai'] -1) * $kichthuoctrang;
+									$tranghientai = ($_GET['tranghientai']);
+								}
+								$productpt = "SELECT sku_product, image, name_product, date_upload, summary, typename, flag FROM product p, type_product tp WHERE p.id_type = tp.id_type ORDER BY date_upload DESC limit {$dongbatdau},{$kichthuoctrang}";
+								$rs_productpt = mysqli_query($conn, $productpt);
+                                while ($row_product = mysqli_fetch_array($rs_productpt)) 
                                 {
                                     $count++;
                         ?>
@@ -184,7 +204,8 @@
                                                 </tr>
                         <?php 
                                 }
-                                // end while
+								
+                                
                             }
                             else
                             {
@@ -258,13 +279,27 @@
                         ?>
                                             </tbody>
                                         </table>
-                                    </div>
+						<?php
+										// end while
+								for($i =1; $i<= $tongsotrang; $i++){
+									if($tranghientai == $i){
+										echo $i;
+									}
+									else{
+						?>
+										<a style="text-decoration:underline;" href= "http://localhost/CongNgheWeb/bookShop/admin/pages/san-pham.php?tranghientai=<?php echo $i; ?> "><?php echo $i . " "; ?></a>
+						<?php
+									}
+								}
+						?>		
+						           </div>
                                 </div>
                             </div>
                             <!-- card -->
                         </div>
                         <!-- col-lg-12 -->
                     </div>
+					
                 </div>
             </div>
 <?php 
