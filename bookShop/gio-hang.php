@@ -91,9 +91,11 @@
 												<th width="15%">Đơn giá</th>
 												<th width="15%">Số lượng</th>
 												<th width="15%">Giá sách</th>
+												
 											</tr>
 										</thead>
 										<tbody>
+									
 		<?php 
 
 			// show data cart
@@ -156,6 +158,7 @@
 									<!-- table_total -->
 									<ul class="checkout">
 										<li>
+										<h4>Tổng giá trị đơn hàng: <h2 style="font-family: 'Roboto Condensed', sans-serif;"><b><?php echo number_format($total_money); ?>vnđ</b></h2></h4>
 											<a href="trang-chu.html">
 												<button class="btn btn-white f-left" title="Tiếp tục mua hàng" type="submit"><span>Tiếp tục mua hàng</span></button>
 											</a>
@@ -236,11 +239,7 @@
 			}
 			// end while
 		?>
-				<div class="cost_total_mb">
-					TỔNG TIỀN <span class="cost_right_mb">
-						<?php echo number_format($total_money_mb); ?>đ
-					</span>
-				</div>
+		
 				<div class="btn_cart_mobile">
 					<a href="thanh-toan.html">
 						<button class="btn btn-primary button btn-proceed-checkout" title="Xác nhận đơn hàng"><span>Xác nhận mua sách</span></button>
@@ -249,6 +248,7 @@
 						<button class="btn btn-white f-left" title="Tiếp tục mua hàng" type="submit"><span>Tiếp tục mua hàng</span></button>
 					</a>
 				</div>
+			
 			</div>
 			<!-- cart_mobile_page lg_hidden -->
 	<?php
@@ -257,8 +257,13 @@
 		}
 		// end check session
 	?>
+	
 		</div>
 		<!-- content -->
+		<!--Tong tien-->
+		
+                  
+               
 <?php 
 	
 	// footer

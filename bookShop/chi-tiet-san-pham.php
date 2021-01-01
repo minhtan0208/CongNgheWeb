@@ -8,7 +8,7 @@
 	if(isset($_GET['id']))
 	{
 		$id = $_GET['id'];
-		$data = "SELECT sku_product, tp.id_type as id_type,  typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, content, price, view, qty FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1 AND sku_product = '$id'";
+		$data = "SELECT sku_product, tp.id_type as id_type,  typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, price, view, qty FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1 AND sku_product = '$id'";
 		$rs_data = mysqli_query($conn, $data);
 		$row_data = mysqli_fetch_array($rs_data);
 
@@ -235,7 +235,7 @@
 
 		$id_type = $row_data['id_type'];
 
-		$product_rela = "SELECT sku_product, typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, content, price FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1  AND p.id_type = $id_type AND sku_product <> '$id'";
+		$product_rela = "SELECT sku_product, typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, price FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1  AND p.id_type = $id_type AND sku_product <> '$id'";
 		$rs_product_rela = mysqli_query($conn, $product_rela);
 		for ($i = 0; $i < 1; $i++){
 			$row_product_rela = mysqli_fetch_array($rs_product_rela);
@@ -278,7 +278,7 @@
 
 		$id_type = $row_data['id_type'];
 
-		$product_rela = "SELECT sku_product, typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, content, price FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1  AND p.id_type = $id_type AND sku_product <> '$id'";
+		$product_rela = "SELECT sku_product, typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, price FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1  AND p.id_type = $id_type AND sku_product <> '$id'";
 		$rs_product_rela = mysqli_query($conn, $product_rela);
 		while($row_product_rela = mysqli_fetch_array($rs_product_rela))	
 		{

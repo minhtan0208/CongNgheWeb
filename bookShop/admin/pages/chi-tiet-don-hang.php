@@ -178,6 +178,7 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    
                                 </div>
                                 <!-- card-body -->
                                 <div class="card-footer">
@@ -195,6 +196,7 @@
                 </div>
             </div>
 <?php 
+
         // footer
         include('includes/footer.php');
     }

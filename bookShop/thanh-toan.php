@@ -71,7 +71,10 @@
 			}
 			else
 			{
+				// check có sản phẩm trong giỏ hàng
 		?>
+		
+		<!-- html hiển thị thông tin dặt hàng-->
 							<div class="cart_login">
 								<div class="title_cart">
 									<h3>THÔNG TIN ĐẶT HÀNG</h3>
@@ -120,8 +123,9 @@
 											</tr>
 										</thead>
 										<tbody>
+										
+										
 		<?php 
-
 			// show data cart
 			$datacart = "SELECT id_cart, image, name_product, price, c.qty as qty_cart FROM cart c, product p WHERE c.sku_product = p.sku_product AND id_customer = '$id_acc'";
 			$rs_datacart = mysqli_query($conn, $datacart);
@@ -151,8 +155,10 @@
 		<?php 
 			}
 			// end show data cart
-		?>									
+		?>						
+
 										</tbody>
+										<h4>Tổng giá trị đơn hàng: <h2 style="font-family: 'Roboto Condensed', sans-serif;"><?php echo number_format($total_money); ?>đ<b>vnđ</b></h2></h4>
 									</table>
 									<!-- table desktop -->
 									<table class="table_cart table_total">
@@ -220,15 +226,12 @@
 		}
 		// end while cart mobile
 	?>
-				<div class="cost_total_mb">
-					TỔNG TIỀN <span class="cost_right_mb">
-						<?php echo number_format($total_money_mb); ?>đ
-					</span>
-				</div>
+	
 			</div>
 			<!-- cart_mobile_page -->
 		</div>
 		<!-- content -->
+	
 <?php 
 	
 	// footer
