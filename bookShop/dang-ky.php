@@ -16,15 +16,24 @@
 		$date_create = date("Y-m-d H:i:s");
 		$image = "no-image.jpg";
 		$level = 2;
-
+		$regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";
 		if($name && $phone && $address && $email && $password && $repassword)
 		{
+
 			$pass = ($password);
 			$repass = ($repassword);
 
 			if($pass != $repass)
 			{
 				echo "<script>alert('Mật khẩu không trùng nhau!.');</script>";
+			}
+			else if (!preg_match('/^0[0-9]{9}$/', $phone))
+			{
+				echo "<script>alert('Số điện thoại không đúng định dạng!.');</script>";
+			}
+			else if(!preg_match($regex, $email))
+			{
+				echo "<script>alert('Email không đúng định dạng!.');</script>";
 			}
 			else
 			{
@@ -96,7 +105,7 @@
 								<div class="login_form" style="padding-bottom: 0;">
 								  	<div class="form-group">
 								    	<label for="exampleInputEmail1">Email*: </label>
-								    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php if(isset($email)){ echo $email; } ?>">
+								    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="<?php if(isset($email)){ echo $email; } ?>">
 								  	</div>
 								  	<div class="form-group">
 								    	<label for="exampleInputPassword1">Mật khẩu:* </label>
