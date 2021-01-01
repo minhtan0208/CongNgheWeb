@@ -24,9 +24,9 @@
         // save
         if(isset($_POST['change-pass']))
         {
-            $password_old = md5($_POST['password_old']);
-            $password_new = md5($_POST['password_new']);
-            $repass_new = md5($_POST['repass_new']);
+            $password_old = $_POST['password_old'];
+            $password_new = $_POST['password_new'];
+            $repass_new = $_POST['repass_new'];
 
             if($password_old && $password_new && $repass_new)
             {
@@ -42,17 +42,12 @@
                     }
                     else
                     {
-                        if($password_new == "d41d8cd98f00b204e9800998ecf8427e" && $repass_new == "d41d8cd98f00b204e9800998ecf8427e")
-                        {
-                            echo "<script>alert('Vui lòng đặt mật khẩu mới');</script>";
-                        }
-                        else
-                        {
+                       
                             $update = "UPDATE account SET password = '$password_new' WHERE email = '$username'";
                             mysqli_query($conn, $update);
                             echo "<script>alert('Đổi mật khẩu thành công');</script>";
                             echo "<script>location.href='doi-mat-khau.php';</script>";
-                        }
+                        
                     }
                 }
             }

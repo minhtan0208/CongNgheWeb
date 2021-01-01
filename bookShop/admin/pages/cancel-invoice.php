@@ -26,11 +26,7 @@
         if(isset($_GET['cancel']))
         {
             $code_invoice = $_GET['cancel'];
-            // insert to history
-            $text = " đã hủy đơn hàng <b>". $code_invoice . "</b>";
-            $time = date('Y-m-d H:i:s');
-            $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-            mysqli_query($conn, $ins_his);
+            
 
             // remove detail invoice
             $del_detailinvoice = "DELETE FROM detail_invoice WHERE code_invoice = '$code_invoice'";

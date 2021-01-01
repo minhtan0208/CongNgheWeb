@@ -64,11 +64,7 @@
                 echo "<script>alert('Lưu lại thành công');</script>";
                 echo "<script>location.href='slider.php';</script>";
 
-                // insert to history
-                $text = " đã chỉnh sửa slider";
-                $time = date('Y-m-d H:i:s');
-                $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-                mysqli_query($conn, $ins_his);
+                
             }
             else
             {

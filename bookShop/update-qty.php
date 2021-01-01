@@ -32,20 +32,27 @@
 			$rs_product = mysqli_query($conn, $qty_product);
 			$row_product = mysqli_fetch_array($rs_product);
 			$qty_current = $row_product['qty'];
-
-			if($qty >= $qty_current)
-			{
-				// update qty cart
-				$update = "UPDATE cart SET qty = $qty_current WHERE id_cart = $id_cart";
-				mysqli_query($conn, $update);
-				echo "<script>location.href='gio-hang.php';</script>";
-			}
-			else
-			{
-				// update qty cart
-				$update = "UPDATE cart SET qty = $qty WHERE id_cart = $id_cart";
-				mysqli_query($conn, $update);
+			
+			
+			if($qty == 0){
+				echo "<script>alert('Vui lòng mua số lượng lớn hơn 0');</script>";
 				echo "<script>location.href='gio-hang.html';</script>";
+			}
+			else{
+				if($qty >= $qty_current)
+				{
+					// update qty cart
+					$update = "UPDATE cart SET qty = $qty_current WHERE id_cart = $id_cart";
+					mysqli_query($conn, $update);
+					echo "<script>location.href='gio-hang.php';</script>";
+				}
+				else
+				{
+					// update qty cart
+					$update = "UPDATE cart SET qty = $qty WHERE id_cart = $id_cart";
+					mysqli_query($conn, $update);
+					echo "<script>location.href='gio-hang.html';</script>";
+				}
 			}
 		}
 	}

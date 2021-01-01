@@ -35,11 +35,7 @@
         {
             $code_invoice = $_GET['confirm'];
             
-            // insert to history
-            $text = " đã xác nhận đơn hàng <b>". $code_invoice . "</b>";
-            $time = date('Y-m-d H:i:s');
-            $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-            mysqli_query($conn, $ins_his);
+            
 
             // change flag invoice to transport
             $reup_invoice = "UPDATE invoice SET flag = 1 WHERE code_invoice = '$code_invoice'";

@@ -96,11 +96,7 @@
             {
                 if($name_product)
                 {
-                    // insert to history
-                    $text = " đã đăng  <b>". $name_product . "</b>";
-                    $time = date('Y-m-d H:i:s');
-                    $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-                    mysqli_query($conn, $ins_his);
+                    
                             
                     $name_code = "no-image.png";
 

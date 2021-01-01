@@ -39,11 +39,7 @@
 
             if($content)
             {
-                // insert to history
-                $text = " đã chỉnh sửa thông tin liên hệ";
-                $time = date('Y-m-d H:i:s');
-                $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-                mysqli_query($conn, $ins_his);
+                
 
                 // insert data
                 $ins = "UPDATE contact SET content = \"$content\" WHERE id_contact = $id";
