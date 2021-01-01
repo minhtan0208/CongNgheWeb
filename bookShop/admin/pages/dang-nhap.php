@@ -18,11 +18,10 @@
             $email = $_POST['email'];
             $password = ($_POST['password']);
 
-            if($email)
+            if($email && $password)
             {
                 
-                if($password != "d41d8cd98f00b204e9800998ecf8427e") // check space
-                {
+                
                 
                     $sql = "SELECT email, level FROM account WHERE email = '$email' AND password = '$password'";
                     $result = mysqli_query($conn, $sql);
@@ -30,24 +29,26 @@
                     $level = $row['level'];
                     if(mysqli_num_rows($result) == 1)
                     {
-                        // create session
-                        $_SESSION['user'] = $email;
-                        $_SESSION['level'] = $level;
-                        echo "<script>location.href='index.php';</script>";
+						if($level == 1){
+							// create session
+							$_SESSION['user'] = $email;
+							$_SESSION['level'] = $level;
+							echo "<script>location.href='index.php';</script>";
+						}
+						else
+							echo "<script>alert('Tài khoản khách hàng không thể đăng nhập vào trang admin');</script>";
                     }
                     else
                     {
                         echo "<script>alert('Tài khoản không tồn tại!.');</script>";
                     }
-                }
-                else
-                {
-                   echo "<script>alert('Vui lòng nhập mật khẩul!.');</script>";    
-                }
+                
+					
+                
             }
             else
             {
-                echo "<script>alert('Vui lòng nhập email!.');</script>";   
+                echo "<script>alert('Vui lòng nhập tài khoản và mật khẩu!.');</script>";   
             }
         }
         // end funtion
