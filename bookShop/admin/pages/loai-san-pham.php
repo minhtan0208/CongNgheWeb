@@ -37,11 +37,6 @@
                 echo "<script>alert('Tạo loại sản phẩm thành công');</script>";
                 echo "<script>location.href='loai-san-pham.php';</script>";
 
-                // insert to history
-                $text = " đã tạo loại sản phẩm <b>". $name_type . "</b>";
-                $time = date('Y-m-d H:i:s');
-                $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-                mysqli_query($conn, $ins_his);
             }
             else
             {

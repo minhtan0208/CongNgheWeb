@@ -25,11 +25,7 @@
         if(isset($_GET['code_invoice']))
         {
             $code_invoice = $_GET['code_invoice'];
-            // insert to history
-            $text = " đã thu hồi đơn hàng <b>". $code_invoice . "</b>";
-            $time = date('Y-m-d H:i:s');
-            $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-            mysqli_query($conn, $ins_his);
+            
 
             // update flag invoice
             $update = "UPDATE invoice SET flag = 3 WHERE code_invoice = '$code_invoice'";

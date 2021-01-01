@@ -40,7 +40,7 @@
             $sku_product = "S" . $number_inc;
         }
 
-        // upload blog
+        // upload product
         if(isset($_POST['upload']))
         {
             // get data
@@ -75,11 +75,7 @@
                     }
                     else
                     {
-                        // insert to history
-                        $text = " đã đăng  <b>". $name_product . "</b>";
-                        $time = date('Y-m-d H:i:s');
-                        $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-                        mysqli_query($conn, $ins_his);
+                       
 
                         // upload file to host
                         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
@@ -179,7 +175,7 @@
                                                     <select class="form-control" name="id_type">
                                 <?php 
 
-                                    // show type blog
+                                    // show type product
                                     $type_op = "SELECT id_type, typename FROM type_product";
                                     $rs_type_op = mysqli_query($conn, $type_op);
                                     while ($row_type_op = mysqli_fetch_array($rs_type_op))

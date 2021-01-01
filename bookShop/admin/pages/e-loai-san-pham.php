@@ -40,12 +40,7 @@
 
             if($name_type)
             {
-                // insert to history
-                $text = " đã chỉnh sửa loại sản phẩm <b>". $delname . "</b> thành <b>". $name_type . "</b>";
-                $time = date('Y-m-d H:i:s');
-                $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-                mysqli_query($conn, $ins_his);
-
+               
                 // insert data
                 $update = "UPDATE type_product SET typename = '$name_type', slug_type = '$slug' WHERE id_type = $id";
                 mysqli_query($conn, $update);
