@@ -145,6 +145,7 @@
 											</ul>
 										</li>
 										<li class="nav_item"><a href="gio-hang.html" title="Giỏ hàng">Giỏ hàng của bạn</a></li>
+										<li class="nav_item"><a href="don-hang.php" title="Đơn hàng">Đơn hàng của bạn</a></li>
 										<li class="nav_item">
 											
 											<ul class="item_small">
