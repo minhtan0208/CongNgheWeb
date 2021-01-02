@@ -16,7 +16,7 @@
         // include function
         require('modules/functions.php');
 
-        // get date from session
+        // get  session
         $session = "SELECT * FROM account WHERE email = '".$users."'";
         $rs_session = mysqli_query($conn, $session);
         $row_session = mysqli_fetch_array($rs_session);

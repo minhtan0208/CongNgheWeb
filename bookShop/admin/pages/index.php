@@ -29,6 +29,22 @@
         $rs_admin = mysqli_query($conn, $admin);
         $row_admin = mysqli_fetch_array($rs_admin);
         $tong_admin = $row_admin['tong_admin'];
+
+        // income
+        $code_invoice_aa= "SELECT code_invoice FROM invoice where flag = 2 and MONTH(order_date) = MONTH(CURRENT_DATE())";
+        $rs_code_invoice = mysqli_query($conn, $code_invoice_aa);
+        $total_money_sta = 0;
+        while ($row_code_invoice_aa = mysqli_fetch_array($rs_code_invoice)){
+            $detail_invoice = "SELECT dinv.sku_product as sku_product, image, name_product, p.price as price, dinv.qty as qty FROM detail_invoice dinv, product p WHERE dinv.sku_product = p.sku_product AND code_invoice = '$row_code_invoice_aa[code_invoice]'";
+            $rs_detail_invoice = mysqli_query($conn, $detail_invoice);
+            $total_money = 0;
+            while ($row_detail_invoice = mysqli_fetch_array($rs_detail_invoice)) 
+            {
+                $money = $row_detail_invoice['qty'] * $row_detail_invoice['price'];
+                $total_money += $money;
+            }
+            $total_money_sta += $total_money;
+        }
 ?>
 <body>
         <!-- ============================================================== -->
@@ -70,6 +86,17 @@
                                         </div>
                                     </div>
                                     <div id="sparkline-revenue"></div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    <div class="card-body">
+                                        <h5 class="text-muted" style="font-family: 'Roboto Condensed', sans-serif;">Doanh thu tháng này</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1"><?php echo number_format($total_money_sta); ?></h1>
+                                        </div>
+                                    </div>
+                                    <div id="sparkline-revenue2"></div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -327,7 +354,7 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </div>
+                                        </div>  
                                     </div>
                                 </div>
                                 -->

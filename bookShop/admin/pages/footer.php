@@ -30,7 +30,7 @@
 
             if($content)
             {
-                
+               
 
                 // insert data
                 $ins = "INSERT INTO contact(content, date_create) VALUES('$content','$date_create')";
@@ -49,11 +49,7 @@
         {
             $id = $_GET['id'];
 
-            // insert to history
-            $text = " đã xóa loại thông tin liên hệ";
-            $time = date('Y-m-d H:i:s');
-            $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-            mysqli_query($conn, $ins_his);
+          
 
             // delete record type blog
             $del = "DELETE FROM contact WHERE id_contact = $id";

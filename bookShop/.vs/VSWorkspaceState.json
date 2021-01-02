@@ -2,8 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\admin",
-    "\\admin\\pages"
+    "\\admin\\pages",
+    "\\admin\\pages\\ckeditor",
+    "\\admin\\pages\\ckfinder\\core",
+    "\\admin\\pages\\ckfinder\\core\\connector",
+    "\\admin\\pages\\ckfinder\\core\\connector\\php",
+    "\\admin\\pages\\ckfinder\\core\\connector\\php\\vendor"
   ],
-  "SelectedNode": "\\admin\\pages\\dang-nhap.php",
+  "SelectedNode": "\\admin\\pages\\slider.php",
   "PreviewInSolutionExplorer": false
 }

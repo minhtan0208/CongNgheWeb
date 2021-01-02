@@ -97,11 +97,7 @@
             }
             
 
-            // insert to history
-            $text = " đã xóa loại sản phẩm <b>". $delname . "</b>";
-            $time = date('Y-m-d H:i:s');
-            $ins_his = "INSERT INTO history(text, time, id_acc, flag) VALUES('$text','$time', '$id_acc', 0)";
-            mysqli_query($conn, $ins_his);
+            
 
             // delete record type product
             $del = "DELETE FROM type_product WHERE id_type = $id";
