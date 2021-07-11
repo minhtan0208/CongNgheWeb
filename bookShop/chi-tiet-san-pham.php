@@ -227,38 +227,7 @@
 									</div>
 								</div>
 								<!-- wrap_module_service -->
-								<div class="blog_aside padding-15">
-						    		<h2 class="title_head">
-						    			<span> Có thể bạn thích </span>
-						    		</h2>
-	<?php 
-
-		$id_type = $row_data['id_type'];
-
-		$product_rela = "SELECT sku_product, typename, p.image as image, name_product, date_upload, p.slug as slug, slug_type, typename, author, summary, price FROM product p, type_product tp, account a WHERE p.id_type = tp.id_type AND a.id_acc = p.author AND flag = 1  AND p.id_type = $id_type AND sku_product <> '$id'";
-		$rs_product_rela = mysqli_query($conn, $product_rela);
-		for ($i = 0; $i < 1; $i++){
-			$row_product_rela = mysqli_fetch_array($rs_product_rela);
-		//while($row_product_rela = mysqli_fetch_array($rs_product_rela))	{
-	?>
-						    		<div class="product_item_small">
-						    			<div class="left_item">
-						    				<a href="san-pham/<?php echo $row_product_rela['slug_type']; ?>/<?php echo $row_product_rela['slug']; ?>-<?php echo $row_product_rela['sku_product']; ?>.html">
-						    					<img src="admin/pages/public/images/products/<?php echo $row_product_rela['image']; ?>" alt="<?php echo $row_product_rela['image']; ?>" title="<?php echo $row_product_rela['name_product']; ?>">
-						    				</a>
-						    			</div>
-						    			<div class="product_info">
-						    				<h3><a href="san-pham/<?php echo $row_product_rela['slug_type']; ?>/<?php echo $row_product_rela['slug']; ?>-<?php echo $row_product_rela['sku_product']; ?>.html" title="<?php echo $row_product_rela['name_product']; ?>"><?php echo mb_substr($row_product_rela['name_product'], 0, 35, 'UTF-8')."..."; ?></a></h3>
-						    				<div class="price_box_mini">
-						    					<span><?php echo number_format($row_product_rela['price']); ?>đ</span>
-						    				</div>
-						    			</div>
-						    		</div>
-	<?php 
-		}
-		// end while
-	?>
-						    	</div>
+								
 						    	<!-- product aside -->
 							</div>
 							<!-- col-lg-3 -->
